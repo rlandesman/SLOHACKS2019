@@ -1,5 +1,5 @@
 import requests
-#
+
 #Returns a random quote in string var type
 def get_quote():
     resp = requests.get("http://api.forismatic.com/api/1.0/?method=getQuote&format=text&lang=en")
