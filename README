@@ -1,4 +1,5 @@
 Initialize SLOHACK2019 git repo
 
-Things you must download:
+Library Dependancies:
   requests
+  twilio
