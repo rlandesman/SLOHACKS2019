@@ -1,0 +1,64 @@
+<html>
+  <head>
+     <title>CloseAway</title>
+     <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  </head>
+  <body>
+
+    <div class="container"><br>
+      <center>
+      <img src="{{url_for('static', filename='CloseAway2.png')}}" />
+      </center>
+    </div>
+
+    <div class=container"><br>
+    <div class="row align-items-center justify-content-center">
+    <div class="col-md-4">
+      <form  action="" method="post" role="form">
+        {{ form.csrf }}
+        <div class="form-group">
+
+        <label for="name1">Your Name: </label>
+        <input type="text" class="form-control" id="name1" name="name1" placeholder="What's your name?">
+
+        <label for="email1">Your Email: </label>
+        <input type="text" class="form-control" id="email1" name="email1" placeholder="Enter an email.">
+
+        <label for="name2">Friend's Name: </label>
+        <input type="text" class="form-control" id="name2" name="name2" placeholder="Enter a friend's name.">
+
+        <label for="email2">Friend's Email: </label>
+        <input type="text" class="form-control" id="email2" name="email2" placeholder="Enter a friend's email.">
+
+	      </div>
+        <br>
+        <center>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </center>
+      </form>
+      <br>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+        {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                <strong>Success! </strong> {{ message[1] }}
+                </div>
+            {% endif %}
+            {% if "Error" in message[1]: %}
+                <div class="alert alert-danger">
+                <strong>Error: </strong> {{ message[1] }}
+                </div>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <br>
+    </div>
+    </div>
+  </body>
+</html>
