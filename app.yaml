@@ -11,8 +11,4 @@ handlers:
 libraries:
   - name: ssl
     version: latest
-    
-env_variables:
-    MAILJET_API_KEY: 55c45583e464da1dfa1a3ab7627e86da
-    MAILJET_API_SECRET: 4377aafb934c70c000be3b1939e8ad36
-    MAILJET_SENDER: closest.away@gmail.com
+   
